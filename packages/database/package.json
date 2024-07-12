@@ -1,0 +1,16 @@
+{
+  "name": "database",
+  "version": "0.0.0",
+  "exports": {
+    ".": "./src/client.ts"
+  },
+  "scripts": {
+    "db:generate": "npx prisma generate",
+    "db:push": "npx prisma db push --skip-generate",
+    "db:pull": "npx prisma db pull",
+    "db:studio": "npx prisma studio"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*"
+  }
+}
