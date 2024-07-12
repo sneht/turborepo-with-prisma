@@ -1,6 +1,14 @@
 {
-  "name": "turborepo",
+  "name": "turborepo-with-prisma",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "prisma": {
+    "schema": "packages/database/prisma/schema.prisma",
+    "seed": "tsx packages/database/src/seed.ts"
+  },
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
@@ -8,12 +16,17 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "@types/node": "^20.14.10",
     "prettier": "^3.2.5",
+    "prisma": "5.16.2",
     "turbo": "^2.0.6",
     "typescript": "^5.4.5"
   },
   "packageManager": "pnpm@8.15.6",
   "engines": {
     "node": ">=18"
+  },
+  "dependencies": {
+    "@prisma/client": "5.16.2"
   }
 }
